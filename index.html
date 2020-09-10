@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="files/custom.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="files/custom.js"></script>
+    <script src="confetti.js"></script>
 </head>
 <body class="">
 <div class="container" id="wrapper">
@@ -14,8 +15,10 @@
       <div>
         <span class="text-center text-muted">Click on Spin and have fun!</span>
       </div>
+      <div class="heart" style="display: none;"></div>
       <div class="quote-text">
-          
+        
+        
         <span id="text"></span>
       </div>
       <div class="quote-author">
@@ -29,4 +32,10 @@
     </div>
     <div class="footer"> by <a href="https://codepen.io/hezag/">TYCS</a></div>
   </div>
+  <audio id="pop">
+    <source src="files/heartbeat.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="cheering">
+    <source src="files/cheering.mp3" type="audio/mpeg">
+  </audio>
 </body>

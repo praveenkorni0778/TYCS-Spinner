@@ -7,8 +7,20 @@ var numbers = [{"name":"ANTONITTA LORDUSWAMY","number":"1"},{"name":"ATULKUMAR M
 var colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
 var currentQuote = ''; 
 
+function onSpin(){
+  $("#text").hide();
+  $("#author").hide();
+  $(".heart").show();
+  $('audio#pop')[0].play();
+  setTimeout(function(){
+    getQuote();
+  },10000);
+}
 
 function getQuote() {
+  $(".heart").hide();
+  $("#text").show();
+  $("#author").show();
   let index = Math.floor(Math.random() * numbers.length);
   let randomQuote = numbers[index];
   
@@ -16,7 +28,6 @@ function getQuote() {
     
   currentQuote = randomQuote.name;
   currentAuthor = randomQuote.number;
-  
   
   $(".quote-text").animate(
     { opacity: 0 },
@@ -35,7 +46,8 @@ function getQuote() {
       $('#author').html("Roll no : "+randomQuote.number);
     }
   );
-
+  $('audio#cheering')[0].play();
+  
   var color = Math.floor(Math.random() * colors.length);
   $("html body").css(
     {
@@ -55,6 +67,6 @@ function getQuote() {
 $(document).ready(function() {
   
 
-  $('#new-quote').on('click', getQuote);
+  $('#new-quote').on('click', onSpin);
 
 });
