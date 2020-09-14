@@ -9,8 +9,10 @@ var currentQuote = '';
 
 function onSpin(){
   $("#text").hide();
+  $("#text").text(" ");
   $("#author").hide();
-  $(".heart").show();
+  $("#author").text(" ");
+  $(".contain").show();
   $('audio#pop')[0].play();
   setTimeout(function(){
     getQuote();
@@ -18,7 +20,7 @@ function onSpin(){
 }
 
 function getQuote() {
-  $(".heart").hide();
+  $(".contain").hide();
   $("#text").show();
   $("#author").show();
   let index = Math.floor(Math.random() * numbers.length);
@@ -49,6 +51,7 @@ function getQuote() {
   $('audio#cheering')[0].play();
   
   var color = Math.floor(Math.random() * colors.length);
+  //
   $("html body").css(
     {
       backgroundColor: colors[color],
@@ -56,6 +59,7 @@ function getQuote() {
     },
     1000
   );
+  //
   $(".button").css(
     {
       backgroundColor: colors[color]
