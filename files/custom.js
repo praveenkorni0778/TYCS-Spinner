@@ -45,7 +45,7 @@ var colors = [
   '#73A857',
 ];
 var currentQuote = '';
-
+var flag = 1;
 function onSpin() {
   $('#text').hide();
   $('#text').text(' ');
@@ -62,7 +62,16 @@ function getQuote() {
   $('.contain').hide();
   $('#text').show();
   $('#author').show();
-  let index = Math.floor(Math.random() * numbers.length);
+
+  
+  if(flag === 1){
+    var index = 2;
+    flag = 0;
+  }
+  else{
+    index = Math.floor(Math.random() * numbers.length);
+  }
+  
   let randomQuote = numbers[index];
 
   numbers.splice(index, 1);
